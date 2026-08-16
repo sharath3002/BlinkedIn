@@ -1603,11 +1603,11 @@ async def shutdown():
 
 _cors_env = os.environ.get("CORS_ORIGINS", "").strip()
 if _cors_env and _cors_env != "*":
-    _allowed_origins = [o.strip() for o in _cors_env.split(",") if o.strip()]
+    _allowed_origins = [o.strip().rstrip("/") for o in _cors_env.split(",") if o.strip()]
 elif _cors_env == "*":
     _allowed_origins = ["*"]
 else:
-    _allowed_origins = [FRONTEND_URL]
+    _allowed_origins = [FRONTEND_URL.rstrip("/")]
 if "http://localhost:3000" not in _allowed_origins and "*" not in _allowed_origins:
     _allowed_origins.append("http://localhost:3000")
 logger.info(f"CORS allowed origins: {_allowed_origins}")
