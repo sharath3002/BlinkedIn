@@ -11,3 +11,5 @@
 
 [build.environment]
   YARN_FLAGS = "--frozen-lockfile"
+  CI = "false"
+  
