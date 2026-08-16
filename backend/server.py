@@ -1601,9 +1601,20 @@ async def startup():
 async def shutdown():
     client.close()
 
+_cors_env = os.environ.get("CORS_ORIGINS", "").strip()
+if _cors_env and _cors_env != "*":
+    _allowed_origins = [o.strip() for o in _cors_env.split(",") if o.strip()]
+elif _cors_env == "*":
+    _allowed_origins = ["*"]
+else:
+    _allowed_origins = [FRONTEND_URL]
+if "http://localhost:3000" not in _allowed_origins and "*" not in _allowed_origins:
+    _allowed_origins.append("http://localhost:3000")
+logger.info(f"CORS allowed origins: {_allowed_origins}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL, "http://localhost:3000"],
+    allow_origins=_allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
