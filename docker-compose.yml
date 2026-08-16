@@ -1,0 +1,15 @@
+# Local development only — spins up MongoDB for the backend to talk to.
+# The backend itself runs directly with `uvicorn` (see README) so you get
+# fast reload; only Mongo needs to be containerized.
+version: "3.9"
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

@@ -1,0 +1,103 @@
+{
+  "theme": {
+    "archetype": "Archetype 4 (Swiss & High-Contrast) + Elements of Archetype 5 (Luxury)",
+    "mode": "hybrid",
+    "rationale": "High-end B2B SaaS demands authority, clarity, and trust. Using stark contrasts with premium glassmorphic elements elevates the platform beyond generic job boards into a 'Figma-level' product. The dark/light toggle allows flexibility while maintaining a premium aesthetic."
+  },
+  "colors": {
+    "light": {
+      "background": "#F8F9FA",
+      "surface": "#FFFFFF",
+      "glass": "rgba(255, 255, 255, 0.7)",
+      "text_primary": "#09090B",
+      "text_secondary": "#52525B",
+      "primary": "#0055FF",
+      "primary_hover": "#0044CC",
+      "border": "#E4E4E7",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#EF4444"
+    },
+    "dark": {
+      "background": "#09090B",
+      "surface": "#18181B",
+      "glass": "rgba(9, 9, 11, 0.6)",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "primary": "#0055FF",
+      "primary_hover": "#3377FF",
+      "border": "#27272A",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#EF4444"
+    }
+  },
+  "typography": {
+    "heading_font": "Cabinet Grotesk",
+    "body_font": "Manrope",
+    "mono_font": "JetBrains Mono",
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-bold",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-semibold",
+      "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm tracking-wide",
+      "overline": "text-xs uppercase tracking-[0.2em] font-bold"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous (p-6, p-8, p-12) for breathing room, standard Tailwind units.",
+    "border_radius": "Rounded-lg (8px) for tech/professional feel, subtle and sharp.",
+    "navigation": "Translucent glass-morphism sticky header (backdrop-blur-xl), z-50.",
+    "grid_strategies": {
+      "marketing": "Asymmetric bento, overlapping elements, wide gaps (gap-12).",
+      "dashboard": "Tight bento grids (gap-4 or gap-6) for Admin and Employee portals.",
+      "job_listings": "List views with strong optical alignment, dense data grouping, clear borders."
+    }
+  },
+  "components_strategy": {
+    "buttons": "Sharp inner contrasts, flat primary colors. No muddy gradients. Clear hover states with translation (translate-y-[-2px]).",
+    "cards": "Subtle 1px borders (border-border), flat backgrounds. Hover states feature slight lift and shadow-lg.",
+    "nav_banner": "Translucent glass nav banner including Logo, Technology, Jobs, Refer a Talent, Pricing, Contact, sun/moon toggle, and auth dropdown.",
+    "flowchart": "Animated API workflow flowchart on the home page using Framer Motion or specialized node/SVG animation.",
+    "stacked_companies": "Stacked cards layout (10 newly added companies) with logo, name, role, experience, location. Use vertical cascade styling.",
+    "logo_carousel": "Right-to-left infinite scrolling animated logo carousel (10-20 companies).",
+    "forms": "Minimalist fields, Shadcn UI inputs heavily customized, visible focus rings (ring-2 ring-primary)."
+  },
+  "animations": {
+    "micro_interactions": "Subtle scale on click, explicit hover state color shifts.",
+    "page_transitions": "Fade and slight upward translate on load via Framer Motion.",
+    "complex": "Live animated flowchart mimicking data scraping and delivery. Infinite scrolling logo marquee."
+  },
+  "testing": {
+    "data_testid_convention": "kebab-case, role-based (e.g., 'job-listing-card', 'apply-button', 'theme-toggle-btn'). All interactive and key informational elements MUST include a data-testid."
+  },
+  "media": {
+    "logos": [
+      "https://images.unsplash.com/photo-1758626099012-2904337e9c60?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjBtaW5pbWFsaXN0aWN8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1776243366005-913f5555f0e6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjBtaW5pbWFsaXN0aWN8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1654277041218-84424c78f0ae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjBtaW5pbWFsaXN0aWN8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1761044591996-7a05341a3e12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjBtaW5pbWFsaXN0aWN8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/15863000/pexels-photo-15863000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/15863044/pexels-photo-15863044.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "backgrounds": [
+      "https://images.unsplash.com/photo-1672080070747-9b28b4b403af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMDNkJTIwZ2xhc3MlMjBnZW9tZXRyeXxlbnwwfHx8fDE3ODM0NTQ1ODd8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1672080070762-764c74ee1227?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2xhc3MlMjBnZW9tZXRyeXxlbnwwfHx8fDE3ODM0NTQ1ODd8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "team_office": [
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxzb2Z0d2FyZSUyMGRldmVsb3BlciUyMHdvcmtpbmclMjBvZmZpY2V8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxzb2Z0d2FyZSUyMGRldmVsb3BlciUyMHdvcmtpbmclMjBvZmZpY2V8ZW58MHx8fHwxNzgzNDU0NTg2fDA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use pure HTML + Tailwind for the home page marketing layouts, avoiding rigid Shadcn cards to ensure fluid overlap and asymmetry.",
+    "Implement Shadcn components heavily on the Admin Dashboard and User Referral Portals, using tight bento grids (gap-4/gap-6).",
+    "Nav Banner MUST use backdrop-blur-xl with a translucent background (light/dark adaptive), and absolutely contain all requested links plus the sun/moon toggle.",
+    "For the animated flowchart, use Framer Motion or an SVG animation library to visually depict the API scraping -> delivery -> job board flow. Do not use generic static images.",
+    "For the stacked jobs card section (10 newly added companies), use Framer Motion for scroll-triggered stacking or vertical cascade layout.",
+    "Ensure the right-to-left logo carousel uses 'react-fast-marquee' or pure CSS infinite scroll with the provided logos.",
+    "Always enforce 'data-testid' on interactive elements per the testing rules.",
+    "Implement a robust Dark/Light toggle implementation using Tailwind's 'dark:' variant class system."
+  ]
+}

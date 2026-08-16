@@ -1,0 +1,13 @@
+[build]
+  command = "yarn build"
+  publish = "build"
+
+# React Router uses client-side routing — without this, refreshing on
+# any route other than "/" (e.g. /jobs, /pricing) 404s on Netlify.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  YARN_FLAGS = "--frozen-lockfile"
