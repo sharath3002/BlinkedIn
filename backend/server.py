@@ -17,6 +17,9 @@ import random
 import re
 import resend
 from datetime import datetime, timezone, timedelta
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from typing import Optional, List, Dict, Any
 from fastapi import FastAPI, APIRouter, HTTPException, Request, Response, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -218,6 +221,11 @@ class ResendVerificationReq(BaseModel):
 # ============ App ============
 app = FastAPI(title="BlinkedIn API")
 api = APIRouter(prefix="/api")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 
 # ============ Companies + helpers ============
 # COMPANIES, ROLES, LOCATIONS, PLANS, DEFAULT_AGENT_PROMPT, logo() imported from data.py
