@@ -442,7 +442,8 @@ async def verify_email(token: str):
     return {"ok": True, "email": rec["email"]}
 
 @api.post("/auth/resend-verification")
-async def resend_verification(req: ResendVerificationReq):
+@limiter.limit("3/minute")
+async def resend_verification(req: ResendVerificationReq, request: Request):
     email = req.email.lower().strip()
     user = await db.users.find_one({"email": email})
     fallback_link = None
@@ -462,7 +463,8 @@ async def resend_verification(req: ResendVerificationReq):
     }
 
 @api.post("/auth/forgot-password")
-async def forgot_password(req: ForgotPasswordReq):
+@limiter.limit("3/minute")
+async def forgot_password(req: ForgotPasswordReq, request: Request):
     email = req.email.lower().strip()
     user = await db.users.find_one({"email": email})
     delivered = False
@@ -503,7 +505,8 @@ async def reset_password(req: ResetPasswordReq):
     return {"ok": True, "email": rec["email"]}
 
 @api.post("/auth/change-password")
-async def change_password(req: ChangePasswordReq, user: Dict = Depends(get_current_user)):
+@limiter.limit("5/minute")
+async def change_password(req: ChangePasswordReq, request: Request, user: Dict = Depends(get_current_user)):
     if len(req.new_password) < 8:
         raise HTTPException(400, "Password must be at least 8 characters")
     full = await db.users.find_one({"_id": ObjectId(user["id"])})
@@ -1612,6 +1615,16 @@ if "http://localhost:3000" not in _allowed_origins and "*" not in _allowed_origi
     _allowed_origins.append("http://localhost:3000")
 logger.info(f"CORS allowed origins: {_allowed_origins}")
 
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
+    response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+    return response
+    
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_allowed_origins,
