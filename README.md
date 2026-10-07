@@ -7,6 +7,8 @@ BlinkedIn runs AI agents against companies' own career pages, pulls new openings
 as they go live, and routes candidates through employees who already work there -
 so a referral isn't a cold favor, it's a tracked, paid transaction.
 
+<img width="329" height="114" alt="image" src="https://github.com/user-attachments/assets/539d0255-2d4f-4f39-b506-cbefdf2eb486" />
+
 ---
 
 ## The problem this solves
