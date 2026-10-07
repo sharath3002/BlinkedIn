@@ -1,5 +1,8 @@
 # BlinkedIn
 
+website link 
+https://blinkedln.netlify.app/
+
 This is your original BlinkedIn codebase (FastAPI + MongoDB backend, React/CRA frontend, AI-agent job crawler).
 
 
