@@ -7,7 +7,7 @@ BlinkedIn runs AI agents against companies' own career pages, pulls new openings
 as they go live, and routes candidates through employees who already work there -
 so a referral isn't a cold favor, it's a tracked, paid transaction.
 
-<img width="329" height="114" alt="image" src="https://github.com/user-attachments/assets/539d0255-2d4f-4f39-b506-cbefdf2eb486" />
+<img width="913" height="372" alt="image" src="https://github.com/user-attachments/assets/45f9efb7-bf2c-47bc-87c8-b5c041ebcc74" />
 
 ---
 
@@ -164,3 +164,15 @@ there is no fabricated-data fallback in production. A mock-data mode exists
 only for local development, off by default, so what you see on
 [blinkedln.netlify.app](https://blinkedln.netlify.app/) is exactly what the
 agents found.
+
+
+
+<img width="1919" height="906" alt="image" src="https://github.com/user-attachments/assets/0eb6d071-462b-4cb3-92a6-fad40e5abee9" />
+
+<img width="1285" height="622" alt="image" src="https://github.com/user-attachments/assets/ce0f2f5d-d75f-4f1b-bff4-909d15a9627a" />
+
+<img width="1569" height="569" alt="image" src="https://github.com/user-attachments/assets/8513cef3-f2e3-4482-95af-32454215f59d" />
+
+<img width="1385" height="806" alt="image" src="https://github.com/user-attachments/assets/fb08b03c-8fd9-4272-b712-9504d4600071" />
+
+
