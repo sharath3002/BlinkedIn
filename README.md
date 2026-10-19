@@ -176,3 +176,5 @@ agents found.
 <img width="1385" height="806" alt="image" src="https://github.com/user-attachments/assets/fb08b03c-8fd9-4272-b712-9504d4600071" />
 
 
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/sharath3002/blinkedin?utm_source=readme&utm_medium=badge)
+
